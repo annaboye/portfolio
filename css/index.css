@@ -4,36 +4,34 @@ h1 {
     letter-spacing: 10px;
     
     }
-.maincontainer {
+main {
     background-color:#e3e2df;
     }
   
-
+h3 { animation: jump 1s ease-out;}
 
 h3::first-letter {
     color:#5d001e;
     font-size: 2.6em;
     font-weight: bold;
     line-height: 1;
-
-  }
+}
 
 .side{
     justify-content: center; 
     background-color: #5d001e90;
-    color:#e3e2df;
-
-    
-} 
+    color:#e3e2df;} 
 
 .imagecontainer {
     width: 120px;
     height: auto;
     align-items: center;
+    
 }
 
 img {width: 100px;
     height: auto ;
+    border: solid black;
     border-radius: 50%;
     margin-top:50px ;
     filter: grayscale(80%) opacity(80%);
@@ -49,12 +47,29 @@ img {width: 100px;
 footer{ 
     background-color: #e3e2df;
     }
-
-
+@keyframes jump{
+        from {
+          transform: translate(0, 0);
+        }
+        to {
+          transform: translate(0, -50px);
+        }
+        h3 {
+            animation: jump 1s ease-in-out ;
+        } }
+        
 @media screen and (min-width: 1068px) { 
  
 img {
-    width: 200px;}
+    width: 190px;}
+
+main { background-color: white;
+}  
+
+.first{ background-color: #e3e2df;
 }
-    
+main> section{ 
+    justify-content:space-around ;}
+
+}
 
