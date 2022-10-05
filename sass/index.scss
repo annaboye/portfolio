@@ -1,0 +1,93 @@
+@use "variables" as var;
+
+header {
+  background-color: var.$bg-color;
+}
+
+ul {
+  list-style-type: none;
+}
+
+main {
+  h2 {
+    font-size: 20pt;
+    letter-spacing: 15px;
+    font-family: fantasy;
+  }
+  h4 {
+    font-family: fantasy;
+    font-size: 20pt;
+    animation: jump 1s ease-out;
+    &::first-letter {
+      color: var.$secondarycolor;
+      font-size: 2.6em;
+      font-weight: bold;
+      line-height: 1;
+    }
+  }
+  .profilbild {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 50px;
+    filter: grayscale(80%) opacity(80%);
+  }
+  .side {
+    justify-content: center;
+    background: linear-gradient(var.$primarycolor, var.$secondarycolor);
+    .logga {
+      width: 60px;
+      height: auto;
+    }
+  }
+}
+
+.link {
+  font-size: medium;
+  color: #000000;
+  text-decoration: none;
+}
+
+footer {
+  background-color: var.$primarycolor;
+}
+@keyframes jump {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (min-width: 1068px) {
+  main {
+    background-color: var.$bg-color;
+    .first {
+      background-color: var.$primarycolor;
+      .profilbild {
+        width: 180px;
+      }
+    }
+
+    section {
+      justify-content: space-around;
+      h2,
+      h4 {
+        font-size: 40pt;
+      }
+    }
+    .side {
+      height: 60%;
+      background: linear-gradient(white, var.$secondarycolor);
+      .logga {
+        width: 140px;
+      }
+    }
+  }
+}
