@@ -1,0 +1,61 @@
+@use "variables" as var;
+@use "mixins";
+
+header {
+  background-color: var.$bg-color;
+}
+
+ul {
+  list-style-type: none;
+}
+
+main {
+  justify-content: space-around;
+  align-items: center;
+  background-image: url(/src/assets/pexels-jessica-lewis-creative-583848.jpg);
+  background-size: cover;
+
+  .first {
+    background-color: var.$primarycolor;
+    h2 {
+      font-size: 25pt;
+      letter-spacing: 15px;
+      font-family: fantasy;
+    }
+    h4 {
+      font-family: fantasy;
+      font-size: 1.5rem;
+      color: white;
+      animation: jump 1s ease-out;
+      &::first-letter {
+        font-size: 2.6em;
+        font-weight: bold;
+        line-height: 1;
+      }
+    }
+    .profilbild {
+      width: 100px;
+      height: auto;
+      border-radius: 50%;
+      margin-top: 50px;
+      filter: grayscale(80%) opacity(80%);
+      @include mixins.tablet {
+        width: 200px;
+      }
+    }
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

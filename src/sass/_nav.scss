@@ -1,0 +1,104 @@
+@use "variables" as var;
+@use "mixins";
+
+.header {
+  position: fixed;
+  background-color: var.$primarycolor;
+  width: 100%;
+
+  a {
+    color: var.$bg-color;
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    @include mixins.desktop {
+      padding: 20px 30px;
+    }
+    &:hover {
+      @include mixins.desktop {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  @include mixins.desktop {
+    justify-content: flex-end;
+    flex-direction: row;
+    clear: none;
+    max-height: none;
+  }
+}
+
+.menu-icon {
+  display: flex;
+  padding: 28px 20px;
+  position: relative;
+  justify-content: flex-end;
+  cursor: pointer;
+  @include mixins.desktop {
+    display: none;
+  }
+}
+
+.nav-icon {
+  background: var.$bg-color;
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 15px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  &::before {
+    background: var.$bg-color;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    position: absolute;
+    top: 8px;
+    transition: all 0.2 ease-out;
+  }
+  &::after {
+    background: var.$bg-color;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    position: absolute;
+    top: -8px;
+    transition: all 0.2 ease-out;
+  }
+}
+
+.menu-btn {
+  display: none;
+  &:checked ~ .menu {
+    max-height: 240px;
+    z-index: 1000000;
+  }
+  &:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+  }
+  &:checked ~ .menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  &:checked ~ .menu-icon .nav-icon::after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+}

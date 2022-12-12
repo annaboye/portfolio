@@ -1,0 +1,29 @@
+@use "variables" as var;
+@use "mixins";
+
+#project {
+  h3 {
+  }
+}
+
+#projectcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-top: 2px solid black;
+  @include mixins.tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+  &__picture {
+    width: 300px;
+    height: auto;
+  }
+}

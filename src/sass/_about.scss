@@ -1,0 +1,17 @@
+@use "variables" as var;
+@use "mixins";
+
+.aboutsection {
+  border-top: 2px solid black;
+  @include mixins.tablet {
+    height: 40vh;
+  }
+}
+
+#about {
+  background-color: var.$primarycolor;
+  justify-content: center;
+  @include mixins.tablet {
+    margin-top: 20px;
+  }
+}

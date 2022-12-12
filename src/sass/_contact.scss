@@ -1,0 +1,12 @@
+@use "variables" as var;
+@use "mixins";
+
+#contact {
+  background-color: var.$primarycolor;
+}
+
+a {
+  font-size: medium;
+  color: black;
+  text-decoration: none;
+}
