@@ -1,5 +1,7 @@
 import { IProject } from "./models/IProject";
+import { getImg } from "./services/gitimg";
 import { getData } from "./services/gitrepos";
+import { portfolio } from "../assets/portfolio.png";
 
 let projects: IProject[] = [];
 
@@ -9,9 +11,7 @@ async function getProjects() {
   createHtml(projects);
 }
 
-getProjects();
-//getdata();
-function createHtml(projects: IProject[]) {
+async function createHtml(projects: IProject[]) {
   let projectContainer = document.getElementById(
     "projectcontainer"
   ) as HTMLDivElement;
@@ -21,18 +21,22 @@ function createHtml(projects: IProject[]) {
     let titleOfProject = document.createElement("h3");
     let link = document.createElement("a");
     let img = document.createElement("img");
+
     container.className = "project";
 
     titleOfProject.className = "project__name";
     titleOfProject.innerHTML = projects[i].name;
     link.href = projects[i].html_url;
     link.innerHTML = projects[i].html_url;
+    img.src = portfolio;
+
     img.className = "project__picture";
     img.alt = projects[i].name;
-    img.src = projects[i].html_url;
+    container.appendChild(img);
+
     container.appendChild(titleOfProject);
     container.appendChild(link);
-    container.appendChild(img);
     projectContainer.appendChild(container);
   }
 }
+getProjects();

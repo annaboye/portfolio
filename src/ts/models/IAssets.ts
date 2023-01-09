@@ -1,3 +1,3 @@
 export interface IAssets {
-  path: string;
+  path: string[];
 }
