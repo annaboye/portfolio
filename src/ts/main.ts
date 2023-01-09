@@ -1,7 +1,7 @@
 import { IProject } from "./models/IProject";
 import { getImg } from "./services/gitimg";
 import { getData } from "./services/gitrepos";
-import { portfolio } from "../assets/portfolio.png";
+// import { portfolio } from "../assets/portfolio.png";
 
 let projects: IProject[] = [];
 
@@ -28,7 +28,10 @@ async function createHtml(projects: IProject[]) {
     titleOfProject.innerHTML = projects[i].name;
     link.href = projects[i].html_url;
     link.innerHTML = projects[i].html_url;
-    img.src = portfolio;
+    img.src =
+      "https://github.com/annaboye/portfolio/blob/main/src/assets/" +
+      projects[i].name +
+      ".png?raw=true";
 
     img.className = "project__picture";
     img.alt = projects[i].name;
