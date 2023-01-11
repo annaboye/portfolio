@@ -1,5 +1,5 @@
 import { IProject } from "./models/IProject";
-import { getImg } from "./services/gitimg";
+
 import { getData } from "./services/gitrepos";
 // import { portfolio } from "../assets/portfolio.png";
 
