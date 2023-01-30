@@ -10,27 +10,57 @@ ul {
 }
 
 main {
-  justify-content: space-around;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  background-image: url(/src/assets/pexels-jessica-lewis-creative-583848.jpg);
+  overflow: hidden;
+  padding: 0;
+  height: 100vh;
+  color: var.$primarycolor;
+  background-image: url(/src/assets/mybackground.jpg);
   background-size: cover;
+  background-position: center;
+  background-position-x: center;
+
+  @include mixins.tablet {
+    background-position: inherit;
+  }
 
   .first {
-    background-color: var.$primarycolor;
+    background-color: var.$bg-color;
+    padding: 5px;
+    height: 70%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: end;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    @include mixins.desktop {
+      width: 70%;
+    }
     h2 {
-      font-size: 25pt;
+      font-size: 2rem;
       letter-spacing: 15px;
       font-family: fantasy;
+      color: var.$primarycolor;
+      @include mixins.tablet {
+        font-size: 2.5rem;
+      }
     }
     h4 {
       font-family: fantasy;
       font-size: 1.5rem;
-      color: white;
+      color: var.$primarycolor;
       animation: jump 1s ease-out;
+
       &::first-letter {
-        font-size: 2.6em;
+        font-size: 2em;
         font-weight: bold;
         line-height: 1;
+      }
+      @include mixins.tablet {
+        font-size: 2.5rem;
       }
     }
     .profilbild {

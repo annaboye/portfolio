@@ -2,11 +2,12 @@
 @use "mixins";
 
 #contact {
-  background-color: var.$primarycolor;
+  background-color: var.$secondarycolor;
+  color: var.$primarycolor;
 }
 
 a {
   font-size: medium;
-  color: black;
+  color: var.$primarycolor;
   text-decoration: none;
 }

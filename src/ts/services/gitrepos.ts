@@ -1,5 +1,5 @@
 import axios, { AxiosPromise } from "axios";
-import { IGithubResponse } from "../models/IGithubResponse";
+// import { IGithubResponse } from "../models/IGithubResponse";
 import { IProject } from "../models/IProject";
 
 export function getData(): Promise<IProject[]> {
