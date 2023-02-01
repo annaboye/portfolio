@@ -4,6 +4,9 @@
 #contact {
   background-color: var.$secondarycolor;
   color: var.$primarycolor;
+  ul {
+    margin: 0;
+  }
 }
 
 a {

@@ -12,6 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 10px;
 
   @include mixins.desktop {
     flex-direction: row;
@@ -23,6 +24,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 4px 3px 8px 1px #969696;
+  margin-bottom: 10px;
+
   @include mixins.desktop {
     align-items: initial;
     justify-content: flex-start;
