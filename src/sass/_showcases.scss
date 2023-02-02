@@ -1,8 +1,10 @@
 @use "variables" as var;
 @use "mixins";
 
-#project {
-  max-width: 100%;
+.showcases {
+  padding-top: 10px;
+  background-color: var.$tetriarycolor;
+  margin-top: 0;
 }
 
 #projectcontainer {
@@ -11,13 +13,11 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
-  // flex-direction: column;
-  // justify-content: center;
+
   align-items: center;
   padding-bottom: 10px;
 
   @include mixins.desktop {
-    // flex-direction: row;
     justify-content: space-between;
   }
 }
@@ -26,7 +26,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 4px 3px 8px 1px #969696;
+  // box-shadow: 4px 3px 8px 1px #969696;
   margin-bottom: 10px;
 
   @include mixins.desktop {
@@ -42,6 +42,7 @@
       opacity: 90%;
     }
     &__picture {
+      border-radius: 15px;
       width: 100%;
       height: auto;
       @include mixins.desktop {

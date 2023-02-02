@@ -1,10 +1,12 @@
 @use "variables" as var;
 @use "mixins";
 
-#about {
-  justify-content: center;
-  padding: 10px;
-  @include mixins.tablet {
-    margin-top: 20px;
+.about {
+  padding-top: 10px;
+  background-color: rgb(35, 35, 35);
+
+  &__info {
+    justify-content: center;
+    padding: 30px;
   }
 }
