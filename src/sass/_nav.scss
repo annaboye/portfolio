@@ -3,9 +3,12 @@
 
 .header {
   position: fixed;
-  background-color: var.$secondarycolor;
+  background-color: var.$tetriarycolor;
   width: 100%;
   padding: 0%;
+  @include mixins.desktop {
+    background-color: transparent;
+  }
 
   a {
     color: var.$primarycolor;

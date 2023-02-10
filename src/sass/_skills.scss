@@ -1,0 +1,62 @@
+@use "variables" as var;
+@use "mixins";
+
+#skills {
+  h3 {
+    background-color: var.$bg-color;
+  }
+  width: 100 vw;
+  min-height: 100vh;
+  background-color: var.$secondarycolor;
+  animation: bgColor 4s infinite ease-in-out;
+}
+
+.skillsbox {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: change 4s infinite ease-in-out;
+
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include mixins.tablet {
+    background-size: 40%;
+  }
+
+  article {
+    text-align: center;
+    padding: 30px;
+    min-height: 20%;
+    max-width: 400px;
+  }
+}
+
+@keyframes change {
+  0% {
+    background-image: color(#ffceda00);
+    color: #ffceda;
+  }
+  25% {
+    background-image: url("../assets/skills.png");
+
+    color: #ffceda00;
+  }
+
+  50% {
+    background-image: url("../assets/skills.png");
+
+    color: #ffceda00;
+  }
+
+  75% {
+    background-image: linear-gradient(#ffceda00, #ffceda00);
+    color: #ffceda;
+  }
+
+  100% {
+    background-image: color(#ffceda00);
+    color: #ffceda;
+  }
+}

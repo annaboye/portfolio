@@ -2,53 +2,95 @@
 @use "mixins";
 
 .showcases {
-  padding-top: 10px;
-  background-color: var.$tetriarycolor;
   margin-top: 0;
+  min-height: 100vh;
+  h3 {
+    background-color: var.$secondarycolor;
+  }
+}
+
+.showcasebtn {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+
+  height: 70px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  background-image: linear-gradient(
+    to right,
+    #7e7d7d,
+    #e440a2,
+    #2e2029,
+    #b62b6e
+  );
+  box-shadow: 0 4px 15px 0 rgba(55, 55, 55, 0.75);
+
+  border-radius: 50px;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    background-position: 100% 0;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  &:focus {
+    outline: none;
+  }
+  @include mixins.desktop {
+    width: 250px;
+  }
 }
 
 #projectcontainer {
-  max-width: 100%;
+  background-color: var.$tetriarycolor;
+  min-height: 80vh;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
 
   align-items: center;
-  padding-bottom: 10px;
+  padding: 50px;
 
   @include mixins.desktop {
-    justify-content: space-between;
+    justify-content: center;
   }
 }
 
 .project {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  // box-shadow: 4px 3px 8px 1px #969696;
-  margin-bottom: 10px;
+  padding: 20px;
 
   @include mixins.desktop {
-    align-items: initial;
-    justify-content: flex-start;
+    flex-direction: column;
   }
 
   &__imgcontainer {
-    max-width: 200px;
+    width: 200px;
     height: auto;
-    filter: grayscale(60%);
+    @include mixins.desktop {
+      width: 250px;
+    }
+
     &:hover {
-      opacity: 90%;
+      opacity: 70%;
     }
     &__picture {
       border-radius: 15px;
       width: 100%;
       height: auto;
-      @include mixins.desktop {
-        width: 200px;
-        height: 120px;
-      }
     }
   }
 }

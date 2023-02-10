@@ -1,12 +1,21 @@
 @use "variables" as var;
 @use "mixins";
 
+#about {
+  min-height: 100vh;
+}
+
 .about {
-  padding-top: 10px;
-  background-color: rgb(35, 35, 35);
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &__info {
-    justify-content: center;
+    text-align: center;
     padding: 30px;
+    @include mixins.desktop {
+      padding: 0px 400px 0px 400px;
+    }
   }
 }

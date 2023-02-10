@@ -1,9 +1,12 @@
 import { IProject } from "./models/IProject";
 
 import { getData } from "./services/gitrepos";
-// import { portfolio } from "../assets/portfolio.png";
 
 let projects: IProject[] = [];
+
+function init() {
+  createHtmlForShowButton();
+}
 
 async function getProjects() {
   projects = await getData();
@@ -15,6 +18,14 @@ function createHtmlForRepos(projects: IProject[]) {
   let projectContainer = document.getElementById(
     "projectcontainer"
   ) as HTMLDivElement;
+
+  projectContainer.innerHTML = "";
+
+  let hideBtn = document.createElement("button");
+  hideBtn.setAttribute("type", "button");
+  hideBtn.classList.add("showcasebtn");
+  hideBtn.innerHTML = "HIDE PROJECTS";
+  hideBtn.addEventListener("click", createHtmlForShowButton);
 
   for (let i = 0; i < projects.length; i++) {
     let container = document.createElement("div");
@@ -43,37 +54,24 @@ function createHtmlForRepos(projects: IProject[]) {
 
     projectContainer.appendChild(container);
   }
+
+  projectContainer.appendChild(hideBtn);
 }
-getProjects();
-// function createHtml(projects: IProject[]) {
-//   let projectContainer = document.getElementById("github") as HTMLDivElement;
 
-//   for (let i = 0; i < projects.length; i++) {
-//     let container = document.createElement("div");
-//     let titleOfProject = document.createElement("h3");
-//     let link = document.createElement("a");
-//     let imgContainer = document.createElement("div");
-//     let img = document.createElement("img");
+function createHtmlForShowButton() {
+  let projectContainer = document.getElementById(
+    "projectcontainer"
+  ) as HTMLDivElement;
 
-//     container.className = "project";
-//     imgContainer.className = "project__imgcontainer";
+  projectContainer.innerHTML = "";
 
-//     titleOfProject.className = "project__name";
-//     titleOfProject.innerHTML = projects[i].name;
-//     link.href = projects[i].html_url;
-//     link.innerHTML = projects[i].html_url;
-//     img.src =
-//       "https://github.com/annaboye/portfolio/blob/main/src/assets/" +
-//       projects[i].name +
-//       ".png?raw=true";
+  let showBtn = document.createElement("button");
+  showBtn.setAttribute("type", "button");
+  showBtn.classList.add("showcasebtn");
+  showBtn.innerHTML = "SHOW PROJECTS";
+  showBtn.addEventListener("click", getProjects);
 
-//     img.className = "project__imgcontainer__picture";
-//     img.alt = projects[i].name;
-//     imgContainer.appendChild(img);
-//     container.appendChild(imgContainer);
+  projectContainer.appendChild(showBtn);
+}
 
-//     container.appendChild(titleOfProject);
-//     container.appendChild(link);
-//     projectContainer.appendChild(container);
-//   }
-// }
+init();
