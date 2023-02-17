@@ -22,8 +22,8 @@ main {
   overflow: hidden;
 
   @include mixins.desktop {
-    background-size: 75% 100%;
-    background-position: right;
+    background-size: 75%;
+    background-position: right top;
   }
 
   .first {
@@ -49,6 +49,7 @@ main {
       width: 100%;
       height: 90%;
       padding-left: 10px;
+      padding-bottom: 30px;
       @include mixins.tablet {
         width: 40%;
       }

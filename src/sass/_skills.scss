@@ -16,47 +16,65 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: change 4s infinite ease-in-out;
-
-  background-size: 80%;
-  background-position: center;
-  background-repeat: no-repeat;
-  @include mixins.tablet {
-    background-size: 40%;
-  }
 
   article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 30px;
-    min-height: 20%;
-    max-width: 400px;
+    padding: 10px;
+    min-height: 80%;
   }
 }
 
-@keyframes change {
-  0% {
-    background-image: color(#ffceda00);
-    color: #ffceda;
-  }
-  25% {
-    background-image: url("../assets/skills.png");
+.scene {
+  width: 90%;
+  display: flex;
+  justify-content: center;
 
-    color: #ffceda00;
-  }
+  .card {
+    width: 300px;
+    height: 220px;
 
-  50% {
-    background-image: url("../assets/skills.png");
+    color: white;
+    background-image: linear-gradient(var.$primarycolor, var.$secondarycolor);
+    cursor: pointer;
+    transition: 1s ease-in-out;
+    transform-style: preserve-3d;
 
-    color: #ffceda00;
-  }
+    @include mixins.desktop {
+      width: 500px;
+      height: 350px;
+    }
 
-  75% {
-    background-image: linear-gradient(#ffceda00, #ffceda00);
-    color: #ffceda;
-  }
+    &:hover {
+      transform: rotateY(0.5turn);
+    }
 
-  100% {
-    background-image: color(#ffceda00);
-    color: #ffceda;
+    .card__face {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transition: 1s ease-in-out;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+      img {
+        width: 300px;
+        height: 220px;
+        @include mixins.desktop {
+          width: 500px;
+          height: 350px;
+        }
+      }
+
+      &--back {
+        transform: rotateY(0.5turn);
+      }
+    }
   }
 }
