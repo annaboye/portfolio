@@ -22,8 +22,8 @@ main {
   overflow: hidden;
 
   @include mixins.desktop {
-    background-size: 75%;
-    background-position: right top;
+    background-size: 60%;
+    background-position: center;
   }
 
   .first {
@@ -34,7 +34,6 @@ main {
     height: 100%;
     width: 100%;
     align-items: center;
-    // justify-content: flex-end;
 
     @include mixins.desktop {
       align-items: flex-start;
@@ -54,7 +53,7 @@ main {
         width: 40%;
       }
       @include mixins.desktop {
-        justify-content: flex-start;
+        justify-content: center;
         align-items: start;
       }
 
@@ -89,9 +88,13 @@ main {
       }
     }
   }
-  .bi-arrow-down-square {
-    font-size: 50px;
-  }
+}
+.down {
+  width: 100%;
+  text-align: center;
+}
+.bi-arrow-down-square {
+  font-size: 50px;
 }
 
 @keyframes jump {
